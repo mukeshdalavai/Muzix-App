@@ -1,6 +1,4 @@
 #MUZIX APPLICATION.
 
-WITH 
+#GATEWAY FOR ALL API's 
 
-MVC FRONT END
-(Change Database correspondingly in both the applications.)

@@ -1,6 +1,7 @@
 #MUZIX APPLICATION.
 
-WITH 
+#TRACK SERVICE
 
-MVC FRONT END
+WITH MVC FRONT END.
+
 (Change Database correspondingly in both the applications.)
