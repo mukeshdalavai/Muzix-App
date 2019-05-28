@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+	<!--  Add a bean element with ID as "note" for Note domain with scope prototype-->
+	<bean id="track" class="com.stackroute.domain.Track" scope="prototype"></bean>
+	<!--  Add a bean element with ID as "noteRepository" for CurdReppositoryService domain -->
+	<bean id="crudRepository" class="com.stackroute.crudRepositoryService.CrudRepository"></bean>
+</beans>
