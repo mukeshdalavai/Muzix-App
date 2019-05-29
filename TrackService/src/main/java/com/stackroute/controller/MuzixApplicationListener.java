@@ -21,7 +21,7 @@ import javax.annotation.PostConstruct;
 @Configuration
 @ConfigurationProperties
 
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:bootstrap.properties")
 
 class MuzixApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
 

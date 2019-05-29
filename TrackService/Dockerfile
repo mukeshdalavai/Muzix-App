@@ -1,7 +1,7 @@
 FROM openjdk:11-jdk-stretch
 
-ADD /target/MuzixApplication-0.0.1-SNAPSHOT.jar /src/app/music/MuzixApplication-0.0.1-SNAPSHOT.jar
+ADD /target/TrackService-0.0.1-SNAPSHOT.jar /src/app/track/TrackService-0.0.1-SNAPSHOT.jar
 
-WORKDIR /src/app/music
+WORKDIR /src/app/track
 
-ENTRYPOINT ["java","-jar","MuzixApplication-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","TrackService-0.0.1-SNAPSHOT.jar"]
