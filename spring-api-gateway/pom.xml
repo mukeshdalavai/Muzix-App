@@ -8,13 +8,13 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.stackroute</groupId>
-	<artifactId>gatewayAPI</artifactId>
+	<artifactId>spring-api-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gatewayAPI</name>
-	<description>Demo project for Spring Boot</description>
+	<name>spring-api-gateway</name>
+	<description>API GATEWAY FOR MUZIX APPLICATION</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 	</properties>
 
@@ -28,11 +28,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-netflix-eureka-client</artifactId>
 		</dependency>
 
 		<dependency>

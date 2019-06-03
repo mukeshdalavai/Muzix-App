@@ -16,11 +16,11 @@
 	<description>Demo project for Spring Boot</description>
 
 	<modules>
-		<module>gatewayAPI</module>
+		<module>spring-api-gateway</module>
 		<module>spring-config-server</module>
 		<module>spring-eureka-server</module>
-		<module>TrackService</module>
-		<module>UserService</module>
+		<module>spring-track-service</module>
+		<module>spring-user-service</module>
 	</modules>
 
 	<properties>

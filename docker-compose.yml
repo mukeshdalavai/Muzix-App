@@ -1,57 +1,59 @@
 version: "2"
 services:
 
-  MuzixAPIGateway:
-    image: gateway-api:5.0
-    build: gatewayAPI/
+  spring-api-gateway:
+    image: gateway-api:1.0
+    build: spring-api-gateway/
     restart: always
     network_mode: host
     depends_on:
-      - eureka
+      - spring-eureka-server
     ports:
       - 8050:8050
     expose:
       - 8050
 
-  trackService:
-    image: track-service:4.0
-    build: TrackService/
+  spring-track-service:
+    image: track-service:1.0
+    build: spring-track-service/
     restart: always
     network_mode: host
     depends_on:
-      - eureka
+      - spring-eureka-server
     ports:
       - 8080:8080
     expose:
       - 8080
 
-  UserService:
-    image: user-service:3.0
-    build: UserService/
+  spring-user-service:
+    image: user-service:1.0
+    build: spring-user-service/
     restart: always
     network_mode: host
     depends_on:
-      - eureka
+      - spring-eureka-server
     ports:
       - 8060:8060
     expose:
       - 8060
 
 
-  eureka:
-    image: eureka-server:3.0
+  spring-eureka-server:
+    image: eureka-server:1.0
     build: spring-eureka-server/
     restart: always
     network_mode: host
     depends_on:
-      - ServerConfig
+      - spring-config-server
     ports:
       - 8761:8761
     expose:
       - 8761
 
-  ServerConfig:
+  spring-config-server:
     image: config-server:1.0
+    build: spring-config-server/
+    restart: always
     network_mode: host
     ports:
       - 8880:8880
