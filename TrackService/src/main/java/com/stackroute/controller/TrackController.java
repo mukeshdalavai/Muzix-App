@@ -26,7 +26,7 @@ public class TrackController {
   }
 
 
-  @PostMapping("addTrack")
+  @PostMapping("/addTrack")
   public ResponseEntity<?> saveTrack(@RequestBody Track track) {
 
     ResponseEntity responseEntity;

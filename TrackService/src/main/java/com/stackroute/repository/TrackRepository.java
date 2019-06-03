@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.sound.midi.Track;
 import java.util.List;
 
 @Repository
@@ -16,7 +17,7 @@ public interface TrackRepository extends MongoRepository<Track,Integer > {
 
     public boolean existsByTrackIdAndTrackName(int trackId, String trackName);
 
-    public Track findById(int trackId);
+    public Track findByTrackId(int trackId);
 
     public List<Track> findByTrackName(String trackName);
 

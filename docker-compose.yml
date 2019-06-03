@@ -1,0 +1,74 @@
+version: "2"
+services:
+
+  MuzixAPIGateway:
+    image: gateway-api:5.0
+    build: gatewayAPI/
+    restart: always
+    network_mode: host
+    depends_on:
+      - eureka
+    ports:
+      - 8050:8050
+    expose:
+      - 8050
+
+  trackService:
+    image: track-service:4.0
+    build: TrackService/
+    restart: always
+    network_mode: host
+    depends_on:
+      - eureka
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
+
+  UserService:
+    image: user-service:3.0
+    build: UserService/
+    restart: always
+    network_mode: host
+    depends_on:
+      - eureka
+    ports:
+      - 8060:8060
+    expose:
+      - 8060
+
+
+  eureka:
+    image: eureka-server:3.0
+    build: spring-eureka-server/
+    restart: always
+    network_mode: host
+    depends_on:
+      - ServerConfig
+    ports:
+      - 8761:8761
+    expose:
+      - 8761
+
+  ServerConfig:
+    image: config-server:1.0
+    network_mode: host
+    ports:
+      - 8880:8880
+    expose:
+      - 8880
+
+  mongo:
+    image: mongo:4.1
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management
+    ports:
+      - 5672:5672
+      - 15672:15672

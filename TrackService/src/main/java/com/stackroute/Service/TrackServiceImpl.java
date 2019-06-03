@@ -20,7 +20,7 @@ this.trackRepository = trackRepository;
   @Override
   public Track saveTrack(Track track) throws trackAlreadyExistException {
 
-    if(trackRepository.existsById(track.getTrackId()))
+    if(trackRepository.existsByTrackId(track.getTrackId()))
       throw new trackAlreadyExistException("Track already exists...");
 
     Track savedTrack = trackRepository.save(track);
@@ -61,7 +61,7 @@ this.trackRepository = trackRepository;
   @Override
   public List<Track> removeTrack(int trackId) throws TrackNotFoundException{
     if (trackRepository.existsByTrackId(trackId)) {
-      trackRepository.delete(trackRepository.findById(trackId));
+      trackRepository.delete(trackRepository.findByTrackId(trackId));
       return getAllTracks();
     }
       else
